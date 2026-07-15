@@ -72,3 +72,20 @@ print(f"The total amount for The Completed Transaction is: ${total_revenue_for_c
 #import csv
 # reader = csv.DictReader(file)
 
+#Use Case B: Reading Bearer Tokens from HTTP Authorization Headers
+
+# Real-world API middleware logic
+auth_header = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+
+# Limit split to 1 cut (maxsplit=1) to safely isolate the token
+auth_type, token = auth_header.split(" ", 1)
+
+print(auth_type)  # Output: Bearer
+print(token)      # Output: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+
+# Use Case C: Resolving File Paths and Extensions
+#To dynamically route uploads or verify file formats, 
+# developers split file paths to isolate the extension or the base directory.
+s3_key = "uploads/2026/profiles/mushu_avatar.png"
+parts = s3_key.split("/")
+print(parts[-1])  # Output: mushu_avatar.png
